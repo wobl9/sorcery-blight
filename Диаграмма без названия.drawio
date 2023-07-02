@@ -1,20 +1,26 @@
-<mxfile host="app.diagrams.net" modified="2023-07-02T16:20:39.113Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 YaBrowser/23.5.3.904 Yowser/2.5 Safari/537.36" etag="XtKJxnBqHFAZpBggriuQ" version="21.5.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-07-02T20:44:15.858Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 YaBrowser/23.5.3.904 Yowser/2.5 Safari/537.36" etag="9OEM7BuDvOca7gB417EN" version="21.5.2" type="github">
   <diagram name="Страница 1" id="PfBkOUT5i2RRQd7WSKXh">
     <mxGraphModel dx="1386" dy="767" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="slq-3T0SCGQlIYg3fkcx-1" value="main screen" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="slq-3T0SCGQlIYg3fkcx-1" value="main screen" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="40" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="slq-3T0SCGQlIYg3fkcx-3" value="settings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="slq-3T0SCGQlIYg3fkcx-3" value="settings" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="120" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="slq-3T0SCGQlIYg3fkcx-4" value="create character" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="slq-3T0SCGQlIYg3fkcx-4" value="create character" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="200" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="slq-3T0SCGQlIYg3fkcx-6" value="game" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="slq-3T0SCGQlIYg3fkcx-6" value="game" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="320" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xLnrjFcpKFwi8FVjn3M8-1" value="Character&amp;nbsp;&lt;br&gt;- strength&lt;br&gt;-defense&lt;br&gt;-magic defense&lt;br&gt;- life" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="690" width="150" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="xLnrjFcpKFwi8FVjn3M8-2" value="&amp;nbsp;phys attack = base attack + strength - defense&lt;br&gt;magic attack = base magic attack - magic defense&lt;br&gt;attack = phys + magic" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="690" width="150" height="110" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
