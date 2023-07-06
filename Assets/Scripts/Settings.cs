@@ -4,10 +4,10 @@ using Zenject;
 
 public class Settings : MonoBehaviour
 {
-    private SaveSystem _saveSystem;
+    private ISaveSystem _saveSystem;
 
     [Inject]
-    public void Construct(SaveSystem saveSystem)
+    public void Construct(ISaveSystem saveSystem)
     {
         _saveSystem = saveSystem;
     }

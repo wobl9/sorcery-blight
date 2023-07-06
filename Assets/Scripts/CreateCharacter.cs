@@ -1,5 +1,3 @@
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,10 +9,10 @@ public class CreateCharacter : MonoBehaviour
 {
     public TMP_InputField inputField;
     public Button startGameButton; 
-    private SaveSystem _saveSystem;
+    private ISaveSystem _saveSystem;
     
     [Inject]
-    public void Construct(SaveSystem saveSystem)
+    public void Construct(ISaveSystem saveSystem)
     {
         _saveSystem = saveSystem;
     }

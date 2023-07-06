@@ -7,10 +7,10 @@ public class MainMenuScript : MonoBehaviour
 {
 
     [SerializeField] protected GameObject continueButton;
-    private SaveSystem _saveSystem;
+    private ISaveSystem _saveSystem;
 
     [Inject]
-    public void Construct(SaveSystem saveSystem)
+    public void Construct(ISaveSystem saveSystem)
     {
         _saveSystem = saveSystem;
     }

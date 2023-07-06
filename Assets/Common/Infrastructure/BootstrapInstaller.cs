@@ -13,7 +13,7 @@ namespace Common.Infrastructure
         private void BindSaveSystem()
         {
             Container
-                .Bind<SaveSystem>()
+                .Bind<ISaveSystem>()
                 .To<BinarySaveSystem>()
                 .FromInstance(new BinarySaveSystem())
                 .AsSingle();

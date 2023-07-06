@@ -1,11 +1,10 @@
-using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 namespace utils.save
 {
-    public class BinarySaveSystem : SaveSystem
+    public class BinarySaveSystem : ISaveSystem
     {
         private string _filePath;
 
