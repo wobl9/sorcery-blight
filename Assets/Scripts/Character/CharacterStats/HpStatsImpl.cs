@@ -11,7 +11,7 @@ namespace Character
         public int MaxHp => _maxHp;
         public int Hp => _hp;
 
-        public event Action OnPlayerDied;
+        public event Action OnDeath;
 
         public HpStatsImpl(int maxHp, int hp)
         {
@@ -42,7 +42,7 @@ namespace Character
             var newHp = Hp - value;
             if (newHp <= 0)
             {
-                OnPlayerDied?.Invoke();
+                OnDeath?.Invoke();
             }
             else
             {

@@ -6,7 +6,7 @@ namespace Character
     {
         public int MaxHp { get; }
         public int Hp { get; }
-        public event Action OnPlayerDied;
+        public event Action OnDeath;
         public void IncreaseMaxHp(int value);
         public void DecreaseMaxHp(int value);
         public void IncreaseHp(int value);
