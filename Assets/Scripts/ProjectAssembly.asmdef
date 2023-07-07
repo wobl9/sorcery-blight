@@ -1,7 +1,10 @@
 {
-    "name": "CharacterAssembly",
+    "name": "ProjectAssembly",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "Unity.TextMeshPro",
+        "Zenject"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
