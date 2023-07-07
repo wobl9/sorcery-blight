@@ -1,3 +1,4 @@
+using Character;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;

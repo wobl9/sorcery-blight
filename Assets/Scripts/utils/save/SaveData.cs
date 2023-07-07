@@ -1,4 +1,5 @@
 using System;
+using Character;
 
 namespace utils.save
 {
