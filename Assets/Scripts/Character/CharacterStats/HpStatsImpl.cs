@@ -11,7 +11,11 @@ namespace Character
         public int MaxHp => _maxHp;
         public int Hp => _hp;
 
+        public float HpInPercents => (float)_hp / _maxHp;
+
         public event Action OnDeath;
+        public event Action<int> OnHealthChanged;
+
 
         public HpStatsImpl(int maxHp, int hp)
         {
@@ -35,6 +39,7 @@ namespace Character
             var possibleHp = value + Hp;
             var newHp = possibleHp > MaxHp ? MaxHp : possibleHp;
             _hp = newHp;
+            OnHealthChanged?.Invoke(_hp);
         }
 
         public void DecreaseHp(int value)
@@ -47,6 +52,7 @@ namespace Character
             else
             {
                 _hp = newHp;
+                OnHealthChanged?.Invoke(_hp);
             }
         }
 
@@ -54,6 +60,7 @@ namespace Character
         {
             var newHp = value > MaxHp ? MaxHp : value;
             _hp = newHp;
+            OnHealthChanged?.Invoke(_hp);
         }
 
         private void SetMaxHp(int value)
@@ -62,6 +69,7 @@ namespace Character
             if (Hp < MaxHp)
             {
                 _hp = MaxHp;
+                OnHealthChanged?.Invoke(_hp);
             }
         }
     }

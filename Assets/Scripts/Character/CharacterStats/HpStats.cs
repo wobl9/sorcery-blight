@@ -6,6 +6,8 @@ namespace Character
     {
         public int MaxHp { get; }
         public int Hp { get; }
+        public float HpInPercents { get; }
+        public event Action<int> OnHealthChanged;
         public event Action OnDeath;
         public void IncreaseMaxHp(int value);
         public void DecreaseMaxHp(int value);
