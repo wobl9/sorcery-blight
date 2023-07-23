@@ -1,7 +1,8 @@
 namespace Dungeon
 {
-    public class RoomEncounter
+    public abstract class RoomEncounter
     {
-        
+        public abstract int ID { get; }
+        public abstract string ImagePath { get; }
     }
 }

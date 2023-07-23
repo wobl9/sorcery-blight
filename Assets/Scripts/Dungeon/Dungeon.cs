@@ -6,18 +6,24 @@ namespace Dungeon
     {
         private const int DefaultRoomsNumber = 6;
         public List<Room> Rooms;
+        public Room CurrentRoom;
 
-        void Setup()
+        public Dungeon()
         {
             Rooms = GenerateRooms(DefaultRoomsNumber);
+        }
+
+        public Dungeon(List<Room> rooms)
+        {
+            Rooms = rooms;
         }
 
         public static List<Room> GenerateRooms(int count)
         {
             var rooms = new List<Room>();
-            while (rooms.Count < count)
+            for (int i = 0; i < count; i++)
             {
-                rooms.Add(Room.GenerateRoom());
+                rooms.Add(new Room(i));
             }
             return rooms;
         }
@@ -27,9 +33,14 @@ namespace Dungeon
             var newRooms = new List<Room>(rooms);
             while (newRooms.Count < DefaultRoomsNumber)
             {
-                newRooms.Add(Room.GenerateRoom());
+                newRooms.Add(new Room(1));
             }
             return newRooms;
+        }
+
+        public void SetCurrentRoom(Room room)
+        {
+            CurrentRoom = room;
         }
     }
 }

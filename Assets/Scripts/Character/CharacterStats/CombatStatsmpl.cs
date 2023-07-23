@@ -1,5 +1,8 @@
+using System;
+
 namespace Character
 {
+    [Serializable]
     public class CombatStatsImpl : ICombatStats
     {
         private readonly int _strength;

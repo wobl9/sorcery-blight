@@ -6,11 +6,11 @@ namespace utils.save
     [Serializable]
     public class SaveData
     {
-        private Player _player;
+        public Player player;
 
         public SaveData(Player player)
         {
-            _player = player;
+            this.player = player;
         }
     }
 }

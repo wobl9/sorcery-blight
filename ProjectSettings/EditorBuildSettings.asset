@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4cff8863c8f99f548a67d7ac854cbce1
@@ -15,8 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/CreateCharacter.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/DungeonScene.unity
     guid: 62ae5403d6345d848800a8d93cce01e3
+  - enabled: 1
+    path: Assets/Scenes/BattleScene.unity
+    guid: 1eb00060f24e4a64cac68a965866c6ae
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4694b916410dbed47a3f1b11d9d6298c, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 0151def7401d1d0458c134ba0c9c6b26, type: 2}

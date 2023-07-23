@@ -1,5 +1,8 @@
+using System;
+
 namespace Character
 {
+    [Serializable]
     public abstract class Character
     {
         public abstract string Name { get; }

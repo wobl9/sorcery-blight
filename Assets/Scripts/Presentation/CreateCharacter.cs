@@ -34,7 +34,7 @@ public class CreateCharacter : MonoBehaviour
             experience: 0
         );
         _saveSystem.Save(new SaveData(player));
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("DungeonScene");
     }
 
     public void Back()

@@ -5,9 +5,11 @@ namespace Dungeon
     [Serializable]
     public class Room
     {
-        public static Room GenerateRoom()
+        public int id;
+
+        public Room(int id)
         {
-            return new Room();
+            this.id = id;
         }
     }
 }
