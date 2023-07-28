@@ -13,7 +13,7 @@ public class CreateCharacter : MonoBehaviour
     private ISaveSystem _saveSystem;
 
     [Inject]
-    public void Construct(ISaveSystem saveSystem)
+    public void Construct(ISaveSystem saveSystem, GameState gameState)
     {
         _saveSystem = saveSystem;
     }
@@ -33,7 +33,7 @@ public class CreateCharacter : MonoBehaviour
             defense: 2,
             experience: 0
         );
-        _saveSystem.Save(new SaveData(player));
+        _saveSystem.Save(new SaveData(new GameState(player, new Dungeon())));
         SceneManager.LoadScene("DungeonScene");
     }
 

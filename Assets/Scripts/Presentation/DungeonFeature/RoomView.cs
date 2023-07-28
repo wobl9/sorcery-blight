@@ -9,14 +9,14 @@ namespace Presentation.DungeonFeature
     public class RoomView: MonoBehaviour
     {
         public int id;
-        private Dungeon.Dungeon _dungeon;
+        private Dungeon _dungeon;
         private Player _player;
         private RoomViewPresenter _presenter;
         
         [Inject]
         public void Construct(
             Player player,
-            Dungeon.Dungeon dungeon
+            Dungeon dungeon
         )
         {
             _player = player;

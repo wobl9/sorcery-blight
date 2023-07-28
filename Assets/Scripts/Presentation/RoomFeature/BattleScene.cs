@@ -1,7 +1,4 @@
-using System;
-using System.Net.Mime;
 using Character;
-using Dungeon;
 using TMPro;
 using UnityEngine;
 using Zenject;
@@ -12,16 +9,16 @@ namespace Presentation.DungeonFeature
     {
         private BattlePresenter _presenter;
 
-        [SerializeField] private TextMeshPro _textView;
+        [SerializeField] private TMP_Text textView;
         
-        private Dungeon.Dungeon _dungeon;
+        private Dungeon _dungeon;
         private Room _currentRoom;
         private Player _player;
     
         [Inject]
         public void Construct(
-            Player player,
-            Dungeon.Dungeon dungeon
+            Dungeon dungeon,
+            Player player
         )
         {
             _player = player;
@@ -30,12 +27,12 @@ namespace Presentation.DungeonFeature
 
         public void ShowText(string text)
         {
-            _textView.text = text;
+            textView.text = text;
         }
 
         private void Start()
         {
-            _presenter = new BattlePresenter(this, _dungeon.CurrentRoom, _player);
+            _presenter = new BattlePresenter(this, _dungeon.currentRoom, _player);
         }
     }
 }

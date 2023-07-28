@@ -1,16 +1,15 @@
 using System;
-using Character;
 
 namespace utils.save
 {
     [Serializable]
     public class SaveData
     {
-        public Player player;
+        public GameState GameState;
 
-        public SaveData(Player player)
+        public SaveData(GameState gameState)
         {
-            this.player = player;
+            GameState = gameState;
         }
     }
 }

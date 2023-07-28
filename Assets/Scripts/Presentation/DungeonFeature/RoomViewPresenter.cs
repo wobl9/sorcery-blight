@@ -3,9 +3,9 @@ namespace Presentation.DungeonFeature
     public class RoomViewPresenter
     {
         private RoomView _view;
-        private Dungeon.Dungeon _dungeon;
+        private Dungeon _dungeon;
 
-        public RoomViewPresenter(RoomView view, Dungeon.Dungeon dungeon)
+        public RoomViewPresenter(RoomView view, Dungeon dungeon)
         {
             _view = view;
             _dungeon = dungeon;
@@ -13,7 +13,7 @@ namespace Presentation.DungeonFeature
         
         public void OnRoomClicked(int id)
         {
-            _dungeon.SetCurrentRoom(_dungeon.Rooms[id]);
+            _dungeon.currentRoom = _dungeon.rooms[id];
             _view.ShowBattleScene();
         }
 

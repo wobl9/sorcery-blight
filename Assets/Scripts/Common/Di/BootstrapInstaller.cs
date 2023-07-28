@@ -10,6 +10,7 @@ namespace Common.Di
         {
             BindSaveSystem();
             BindImageProvider();
+            BindGameState();
         }
 
         private void BindSaveSystem()
@@ -20,7 +21,7 @@ namespace Common.Di
                 .FromInstance(new BinarySaveSystem())
                 .AsSingle();
         }
-        
+
         private void BindImageProvider()
         {
             Container
@@ -28,6 +29,19 @@ namespace Common.Di
                 .To<LocalImageProvider>()
                 .FromInstance(new LocalImageProvider())
                 .AsSingle();
+        }
+
+        private void BindGameState()
+        {
+            Container
+                .Bind<GameState>()
+                .FromMethod(_ => ResolveGameState())
+                .AsSingle();
+        }
+
+        private GameState ResolveGameState()
+        {
+            return Container.Resolve<ISaveSystem>().Load()?.GameState ?? new GameState();
         }
     }
 }

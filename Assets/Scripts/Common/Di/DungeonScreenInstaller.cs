@@ -6,20 +6,26 @@ namespace Common.Di
 {
     public class DungeonScreenInstaller : MonoInstaller
     {
-        private Player _player;
-
         public override void InstallBindings()
         {
-            _player = Container.Resolve<ISaveSystem>().Load().player;
-            Container.Bind<Player>().FromInstance(_player).AsSingle();
-            BindDungeon();
+            GameState gameState = Container.Resolve<GameState>();
+            BindPlayer(gameState);
+            BindDungeon(gameState);
         }
-        
-        private void BindDungeon()
+
+        private void BindPlayer(GameState gameState)
         {
             Container
-                .Bind<Dungeon.Dungeon>()
-                .FromNew()
+                .Bind<Player>()
+                .FromInstance(gameState.Player)
+                .AsSingle();
+        }
+
+        private void BindDungeon(GameState gameState)
+        {
+            Container
+                .Bind<Dungeon>()
+                .FromInstance(gameState.Dungeon)
                 .AsSingle();
         }
     }

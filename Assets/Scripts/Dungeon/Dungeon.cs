@@ -1,46 +1,41 @@
+using System;
 using System.Collections.Generic;
 
-namespace Dungeon
+[Serializable]
+public class Dungeon
 {
-    public class Dungeon
+    private const int DefaultRoomsNumber = 6;
+    public List<Room> rooms;
+    public Room currentRoom;
+    public Dungeon()
     {
-        private const int DefaultRoomsNumber = 6;
-        public List<Room> Rooms;
-        public Room CurrentRoom;
+        rooms = GenerateRooms(DefaultRoomsNumber);
+    }
 
-        public Dungeon()
+    public Dungeon(List<Room> rooms)
+    {
+        this.rooms = rooms;
+    }
+
+    public static List<Room> GenerateRooms(int count)
+    {
+        var rooms = new List<Room>();
+        for (int i = 0; i < count; i++)
         {
-            Rooms = GenerateRooms(DefaultRoomsNumber);
+            rooms.Add(new Room(i));
         }
 
-        public Dungeon(List<Room> rooms)
+        return rooms;
+    }
+
+    public static List<Room> GenerateRooms(List<Room> rooms)
+    {
+        var newRooms = new List<Room>(rooms);
+        while (newRooms.Count < DefaultRoomsNumber)
         {
-            Rooms = rooms;
+            newRooms.Add(new Room(1));
         }
 
-        public static List<Room> GenerateRooms(int count)
-        {
-            var rooms = new List<Room>();
-            for (int i = 0; i < count; i++)
-            {
-                rooms.Add(new Room(i));
-            }
-            return rooms;
-        }
-
-        public static List<Room> GenerateRooms(List<Room> rooms)
-        {
-            var newRooms = new List<Room>(rooms);
-            while (newRooms.Count < DefaultRoomsNumber)
-            {
-                newRooms.Add(new Room(1));
-            }
-            return newRooms;
-        }
-
-        public void SetCurrentRoom(Room room)
-        {
-            CurrentRoom = room;
-        }
+        return newRooms;
     }
 }
