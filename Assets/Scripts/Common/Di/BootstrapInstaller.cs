@@ -11,6 +11,33 @@ namespace Common.Di
             BindSaveSystem();
             BindImageProvider();
             BindGameState();
+            BindDugeonFactory();
+            BindRoomFactory();
+            BindRoomEncounterFactory();
+        }
+
+        private void BindRoomEncounterFactory()
+        {
+            Container
+                .Bind<EncounterFactory>()
+                .FromNew()
+                .AsTransient();
+        }
+
+        private void BindRoomFactory()
+        {
+            Container
+                .Bind<RoomFactory>()
+                .FromNew()
+                .AsTransient();
+        }
+
+        private void BindDugeonFactory()
+        {
+            Container
+                .Bind<DungeonFactory>()
+                .FromNew()
+                .AsTransient();
         }
 
         private void BindSaveSystem()

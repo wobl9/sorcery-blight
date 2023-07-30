@@ -1,18 +1,25 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Character;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Presentation.DungeonFeature
 {
-    public class RoomView: MonoBehaviour
+    public class RoomView : MonoBehaviour
     {
         public int id;
+        [SerializeField] private Image imageTopLeft;
+        [SerializeField] private Image imageTopRight;
+        [SerializeField] private Image imageBottomLeft;
+        [SerializeField] private Image imageBottomRight;
         private Dungeon _dungeon;
         private Player _player;
         private RoomViewPresenter _presenter;
-        
+
         [Inject]
         public void Construct(
             Player player,
@@ -36,6 +43,31 @@ namespace Presentation.DungeonFeature
         public void ShowBattleScene()
         {
             SceneManager.LoadScene("BattleScene");
+        }
+
+        public void ShowContent(List<Room> rooms)
+        {
+            Room room = rooms.Find(room => room.id == id);
+            int totalEncounters = room.Encounters.Count;
+            if (totalEncounters == 0) return;
+            var encounters = room.Encounters;
+            SetupImageForEncounter(imageTopLeft, encounters, 0);
+            SetupImageForEncounter(imageTopRight, encounters, 1);
+            SetupImageForEncounter(imageBottomLeft, encounters, 2);
+            if (totalEncounters > 3)
+            {
+                imageBottomRight.sprite = Resources.Load<Sprite>(RoomEncounter.UnknownNumberOfEncounterPath);
+            }
+            else
+            {
+                SetupImageForEncounter(imageBottomRight, encounters, 3);
+            }
+        }
+
+        private void SetupImageForEncounter(Image imageView, List<RoomEncounter> rooms, int encounterIndex)
+        {
+            if (rooms.Count <= encounterIndex) return;
+            imageView.sprite = Resources.Load<Sprite>(rooms[encounterIndex].ImagePath);
         }
     }
 }

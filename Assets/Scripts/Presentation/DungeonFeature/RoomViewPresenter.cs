@@ -9,6 +9,7 @@ namespace Presentation.DungeonFeature
         {
             _view = view;
             _dungeon = dungeon;
+            _view.ShowContent(_dungeon.rooms);
         }
         
         public void OnRoomClicked(int id)

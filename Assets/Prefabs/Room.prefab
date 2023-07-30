@@ -373,6 +373,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8877580601054351085}
+  - component: {fileID: 1196609602286370577}
   - component: {fileID: 3484750799945329708}
   m_Layer: 0
   m_Name: Room
@@ -402,6 +403,23 @@ RectTransform:
   m_AnchoredPosition: {x: 1.2377, y: -4.8603}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1196609602286370577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8877580601054351084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7511269a91c4a0f9c549dae3c26f097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5
+  imageTopLeft: {fileID: 8877580600932214853}
+  imageTopRight: {fileID: 8877580599987356376}
+  imageBottomLeft: {fileID: 8877580601297008821}
+  imageBottomRight: {fileID: 8877580600759563751}
 --- !u!114 &3484750799945329708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,14 +464,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1196609602286370577}
         m_TargetAssemblyTypeName: Presentation.DungeonFeature.RoomView, ProjectAssembly
         m_MethodName: OnRoomClicked
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

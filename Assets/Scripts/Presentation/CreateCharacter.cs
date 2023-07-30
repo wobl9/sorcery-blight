@@ -11,11 +11,13 @@ public class CreateCharacter : MonoBehaviour
     public TMP_InputField inputField;
     public Button startGameButton;
     private ISaveSystem _saveSystem;
+    private DungeonFactory _dungeonFactory;
 
     [Inject]
-    public void Construct(ISaveSystem saveSystem, GameState gameState)
+    public void Construct(ISaveSystem saveSystem, GameState gameState, DungeonFactory dungeonFactory)
     {
         _saveSystem = saveSystem;
+        _dungeonFactory = dungeonFactory;
     }
 
     void Update()
@@ -33,7 +35,7 @@ public class CreateCharacter : MonoBehaviour
             defense: 2,
             experience: 0
         );
-        _saveSystem.Save(new SaveData(new GameState(player, new Dungeon())));
+        _saveSystem.Save(new SaveData(new GameState(player, _dungeonFactory.GenerateDungeon())));
         SceneManager.LoadScene("DungeonScene");
     }
 
