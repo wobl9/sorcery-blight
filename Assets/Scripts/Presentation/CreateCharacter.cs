@@ -36,7 +36,7 @@ public class CreateCharacter : MonoBehaviour
             experience: 0
         );
         _saveSystem.Save(new SaveData(new GameState(player, _dungeonFactory.GenerateDungeon())));
-        SceneManager.LoadScene("DungeonScene");
+        SceneTransition.SwitchToScene("DungeonScene");
     }
 
     public void Back()

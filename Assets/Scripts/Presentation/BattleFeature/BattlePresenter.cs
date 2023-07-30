@@ -6,10 +6,10 @@ namespace Presentation.DungeonFeature
     {
         private Player _player;
         private Room _room;
-        private BattleScene _view;
+        private IBattleScene _view;
 
         public BattlePresenter(
-            BattleScene view,
+            IBattleScene view,
             Room room,
             Player player
         )
@@ -17,7 +17,7 @@ namespace Presentation.DungeonFeature
             _view = view;
             _room = room;
             _player = player;
-            _view.ShowText(_room.id.ToString());
+            _view.RenderScene(room.Enemy, player);
         }
     }
 }

@@ -2,14 +2,14 @@ namespace Presentation.DungeonFeature
 {
     public class RoomViewPresenter
     {
-        private RoomView _view;
+        private IRoomView _view;
         private Dungeon _dungeon;
 
-        public RoomViewPresenter(RoomView view, Dungeon dungeon)
+        public RoomViewPresenter(IRoomView view, Dungeon dungeon)
         {
             _view = view;
             _dungeon = dungeon;
-            _view.ShowContent(_dungeon.rooms);
+            view.ShowContent(_dungeon.rooms);
         }
         
         public void OnRoomClicked(int id)

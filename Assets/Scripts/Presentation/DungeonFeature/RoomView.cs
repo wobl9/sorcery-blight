@@ -9,7 +9,7 @@ using Zenject;
 
 namespace Presentation.DungeonFeature
 {
-    public class RoomView : MonoBehaviour
+    public class RoomView : MonoBehaviour, IRoomView
     {
         public int id;
         [SerializeField] private Image imageTopLeft;
@@ -57,10 +57,12 @@ namespace Presentation.DungeonFeature
             if (totalEncounters > 3)
             {
                 imageBottomRight.sprite = Resources.Load<Sprite>(RoomEncounter.UnknownNumberOfEncounterPath);
+                imageBottomRight.enabled = true;
             }
-            else
+            else if (totalEncounters == 3)
             {
                 SetupImageForEncounter(imageBottomRight, encounters, 3);
+                imageBottomRight.enabled = true;
             }
         }
 
@@ -68,6 +70,8 @@ namespace Presentation.DungeonFeature
         {
             if (rooms.Count <= encounterIndex) return;
             imageView.sprite = Resources.Load<Sprite>(rooms[encounterIndex].ImagePath);
+            imageView.enabled = true;
+            
         }
     }
 }

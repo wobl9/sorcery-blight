@@ -27,6 +27,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene("DungeonScene");
+        SceneTransition.SwitchToScene("DungeonScene");
     }
 }

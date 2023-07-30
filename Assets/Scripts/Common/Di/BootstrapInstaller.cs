@@ -1,3 +1,4 @@
+using Character.Enemies;
 using Common.ResourceProviders;
 using utils.save;
 using Zenject;
@@ -14,6 +15,7 @@ namespace Common.Di
             BindDugeonFactory();
             BindRoomFactory();
             BindRoomEncounterFactory();
+            BindEnemiesFactory();
         }
 
         private void BindRoomEncounterFactory()
@@ -28,6 +30,14 @@ namespace Common.Di
         {
             Container
                 .Bind<RoomFactory>()
+                .FromNew()
+                .AsTransient();
+        }
+
+        private void BindEnemiesFactory()
+        {
+            Container
+                .Bind<EnemiesFactory>()
                 .FromNew()
                 .AsTransient();
         }

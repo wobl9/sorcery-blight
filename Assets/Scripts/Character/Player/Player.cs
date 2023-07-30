@@ -5,6 +5,7 @@ namespace Character
     [Serializable]
     public class Player : Character
     {
+        public override string SpritePath => "Sprites/spirit";
         public override string Name { get; }
         public override IHpStats HpStats { get; }
         public override IExperienceStats ExpStats { get; }

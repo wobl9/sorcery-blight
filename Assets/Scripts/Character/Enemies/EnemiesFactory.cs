@@ -2,7 +2,7 @@ namespace Character.Enemies
 {
     public class EnemiesFactory
     {
-        static Enemy Create()
+        public Enemy Create()
         {
             return new Skeleton();
         }
