@@ -12,10 +12,12 @@ public class CreateCharacter : MonoBehaviour
     public Button startGameButton;
     private ISaveSystem _saveSystem;
     private DungeonFactory _dungeonFactory;
+    private GameState _gameState;
 
     [Inject]
     public void Construct(ISaveSystem saveSystem, GameState gameState, DungeonFactory dungeonFactory)
     {
+        _gameState = gameState;
         _saveSystem = saveSystem;
         _dungeonFactory = dungeonFactory;
     }
@@ -35,7 +37,8 @@ public class CreateCharacter : MonoBehaviour
             defense: 2,
             experience: 0
         );
-        _saveSystem.Save(new SaveData(new GameState(player, _dungeonFactory.GenerateDungeon())));
+        _gameState.update(player, _dungeonFactory.GenerateDungeon());
+        _saveSystem.Save(new SaveData(_gameState));
         SceneTransition.SwitchToScene("DungeonScene");
     }
 

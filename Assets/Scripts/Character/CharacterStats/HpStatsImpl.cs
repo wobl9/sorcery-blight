@@ -47,7 +47,7 @@ namespace Character
             var newHp = Hp - value;
             if (newHp <= 0)
             {
-                OnDeath?.Invoke();
+                OnDeath?.Invoke();  
             }
             else
             {
@@ -71,6 +71,11 @@ namespace Character
                 _hp = MaxHp;
                 OnHealthChanged?.Invoke(_hp);
             }
+        }
+
+        public bool IsAlive()
+        {
+            return _hp > 0;
         }
     }
 }

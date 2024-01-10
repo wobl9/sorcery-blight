@@ -19,5 +19,10 @@ namespace Presentation.DungeonFeature
             _player = player;
             _view.RenderScene(room.Enemy, player);
         }
+
+        public void InvokeSkill(int index)
+        {
+            _player.Skills.AllSkills["Punch"].Invoke(_room.Enemy);
+        }
     }
 }

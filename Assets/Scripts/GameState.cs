@@ -4,8 +4,17 @@ using Character;
 [Serializable]
 public class GameState
 {
-    public readonly Dungeon Dungeon;
-    public readonly Player Player;
+    public Dungeon Dungeon
+    {
+        get;
+        private set;
+    }
+
+    public Player Player
+    {
+        get;
+        private set;
+    }
 
     public GameState() {}
 
@@ -13,5 +22,11 @@ public class GameState
     {
         Dungeon = dungeon;
         Player = player;
+    }
+
+    public void update(Player player, Dungeon dungeon)
+    {
+        Player = player;
+        Dungeon = dungeon;
     }
 }

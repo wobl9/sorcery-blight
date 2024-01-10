@@ -13,5 +13,6 @@ namespace Character
         public void DecreaseMaxHp(int value);
         public void IncreaseHp(int value);
         public void DecreaseHp(int value);
+        public bool IsAlive();
     }
 }

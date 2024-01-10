@@ -34,6 +34,11 @@ namespace Presentation.DungeonFeature
             _presenter = new BattlePresenter(this, _dungeon.currentRoom, _player);
         }
 
+        public void OnSkillClicked(int index)
+        {
+            _presenter.InvokeSkill(index);
+        }
+
         public void RenderScene(Enemy enemy, Player player)
         {
             EnemyImage.sprite = Resources.Load<Sprite>(enemy.SpritePath);

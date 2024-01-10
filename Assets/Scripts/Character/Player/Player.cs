@@ -8,7 +8,6 @@ namespace Character
         public override string SpritePath => "Sprites/spirit";
         public override string Name { get; }
         public override IHpStats HpStats { get; }
-        public override IExperienceStats ExpStats { get; }
         public override ICombatStats CombatStats { get; }
 
         public int MaxHp => HpStats.MaxHp;
@@ -17,6 +16,9 @@ namespace Character
         public int Defense => CombatStats.Defense;
         public int Level => ExpStats.Level;
         public int Experience => ExpStats.Experience;
+        
+        public IExperienceStats ExpStats { get; }
+        public PlayerSkills Skills = new();
 
         public Player(string name)
         {
